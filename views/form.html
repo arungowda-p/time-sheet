@@ -1,15 +1,122 @@
 <!DOCTYPE html>
 <html>
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: rgb(43, 137, 226);
+  color: white;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  display: flex;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  color:black;
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {
+  color:black;
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+@media screen and (max-width: 700px) {
+  .row, .navbar {   
+    flex-direction: column;
+  }
+}
+</style>
+</head>
 <body>
 
-<h2>The name Attribute</h2>
+<!-- Note -->
+<div style="background:rgb(38, 96, 184);padding:5px">
+  <h4 style="text-align:center">POC</h4>
+</div>
 
-<form action="/action" method="POST">
-  <label for="fname">Search:</label><br>
-  <input type="text" id="search" name="emp" placeholder="Enter ID or Name"><br><br>
-  <input type="text" id="fname" name="name" value="John"><br><br>
-  <input type="submit" value="Submit">
-</form> 
+<!-- Header -->
+<div class="header">
+  <h1>Time Sheet Reminder</h1>
+  <p>Welcome to <b>Demo Page</b>.</p>
+</div>
+
+<div class="navbar">
+  <a href="#">Add</a>
+  <a href="#">Delete</a>
+</div>
+
+
+<div class="row">
+  <div class="side">
+    <h2>About POC</h2>
+    <p>This application is used set reminders to the employees regading their Time Sheets</p>
+  </div>
+  <div class="main">
+    <h2>Set Reminder</h2>
+    <p>Search:
+    <input type="text" name="search" placeholder="Enter ID/Name" />
+    </p>
+
+    
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Thank You</h2>
+</div>
 
 </body>
 </html>
