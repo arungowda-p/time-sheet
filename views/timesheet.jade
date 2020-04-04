@@ -1,0 +1,69 @@
+doctype html(lang='en')
+head
+    title= title
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div(style='background:rgb(38, 96, 184);padding:5px')
+      h4(style='text-align:center') POC
+    .header
+      h1 Time Sheet Reminder
+      |     
+      p
+        | Welcome to 
+        b Demo Page
+        | .
+    |   
+    .navbar
+      a(href='#', onclick='setreminder();') Set Reminder
+      |     
+      a(href='#', onclick='addemployee();') Add
+      |     
+      a(href='#') Delete
+    |   
+    .row
+      .side
+        h2 About POC
+        |       
+        p
+          | This application is used set reminders to the employees regading their Time Sheets.
+      |     
+      .main
+        section#setreminder(style='display:block')
+          h2 Set Reminder
+          |         
+          p
+            | Search:
+            input(type='text', name='search', placeholder='Enter ID/Name')
+        |       
+        section#addemp(style='display:none')
+          form(action='/add/employee', method='POST')
+            h2 Add New Employee
+            |           
+            p
+              | ID:
+              input(type='number', name='id', placeholder='Portal ID')
+            |           
+            p
+              | Name:
+              input(type='text', name='name', placeholder='Name')
+            |           
+            p
+              | Email:
+              input(type='email', name='mail', placeholder='Email')
+            |           
+            input(type='submit', value='Add')
+    |   
+    .footer
+      h2 Thank You
+    |   
+    script(type='text/javascript').
+      function setreminder() {
+      document.getElementById('setreminder').style.display = 'block';
+      document.getElementById('addemp').style.display = 'none';
+      };
+      function addemployee() {
+      document.getElementById('setreminder').style.display = 'none';
+      document.getElementById('addemp').style.display = 'block';
+      };

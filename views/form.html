@@ -1,122 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Page Title</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+  <title>Page Title</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-/* Style the body */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-/* Header/logo Title */
-.header {
-  padding: 60px;
-  text-align: center;
-  background: rgb(43, 137, 226);
-  color: white;
-}
-
-/* Style the top navigation bar */
-.navbar {
-  display: flex;
-  background-color: #333;
-}
-
-/* Style the navigation bar links */
-.navbar a {
-  color: white;
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-}
-
-/* Change color on hover */
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Column container */
-.row {  
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  color:black;
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 20px;
-}
-
-/* Main column */
-.main {
-  color:black;
-  flex: 70%;
-  background-color: white;
-  padding: 20px;
-}
-
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-}
-
-@media screen and (max-width: 700px) {
-  .row, .navbar {   
-    flex-direction: column;
-  }
-}
-</style>
 </head>
 <body>
 
-<!-- Note -->
-<div style="background:rgb(38, 96, 184);padding:5px">
-  <h4 style="text-align:center">POC</h4>
-</div>
-
-<!-- Header -->
-<div class="header">
-  <h1>Time Sheet Reminder</h1>
-  <p>Welcome to <b>Demo Page</b>.</p>
-</div>
-
-<div class="navbar">
-  <a href="#">Add</a>
-  <a href="#">Delete</a>
-</div>
-
-
-<div class="row">
-  <div class="side">
-    <h2>About POC</h2>
-    <p>This application is used set reminders to the employees regading their Time Sheets</p>
+  <!-- Note -->
+  <div style="background:rgb(38, 96, 184);padding:5px">
+    <h4 style="text-align:center">POC</h4>
   </div>
-  <div class="main">
-    <h2>Set Reminder</h2>
-    <p>Search:
-    <input type="text" name="search" placeholder="Enter ID/Name" />
-    </p>
 
-    
+  <!-- Header -->
+  <div class="header">
+    <h1>Time Sheet Reminder</h1>
+    <p>Welcome to <b>Demo Page</b>.</p>
   </div>
-</div>
 
-<div class="footer">
-  <h2>Thank You</h2>
-</div>
+  <div class="navbar">
+    <a href="#" onclick="setreminder();">Set Reminder</a>
+    <a href="#" onclick="addemployee();">Add</a>
+    <a href="#">Delete</a>
+  </div>
 
+
+  <div class="row">
+    <div class="side">
+      <h2>About POC</h2>
+      <p>This application is used set reminders to the employees regading their Time Sheets.</p>
+    </div>
+    <div class="main">
+      <section id="setreminder" style="display:none">
+        <h2>Set Reminder</h2>
+        <p>Search:
+          <input type="text" name="search" placeholder="Enter ID/Name" />
+        </p>
+      </section>
+      <section id="addemp" style="display:block">
+        <form action="/add/employee" method="POST">
+          <h2>Add New Employee</h2>
+          <p>ID:
+            <input type="number" name="id" placeholder="Portal ID" />
+          </p>
+          <p>Name:
+            <input type="text" name="name" placeholder="Name" />
+          </p>
+          <p>Email:
+            <input type="email" name="mail" placeholder="Email" />
+          </p>
+          <input type="submit" value="Add" />
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <div class="footer">
+    <h2>Thank You</h2>
+  </div>
+  <script type="text/javascript">
+    function setreminder() {
+      document.getElementById('setreminder').style.display = 'block';
+      document.getElementById('addemp').style.display = 'none';
+    };
+    function addemployee() {
+      document.getElementById('setreminder').style.display = 'none';
+      document.getElementById('addemp').style.display = 'block';
+    };
+  </script>
 </body>
+
 </html>
