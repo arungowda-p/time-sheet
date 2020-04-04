@@ -1,9 +1,13 @@
+var fs = require('fs');
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('timesheet', { title: 'TIMESHEET REMINDER POC' });
+
+var normalizedPath = require("path").join(__dirname+"/server");
+console.log("welcome--------------------------------------")
+require("fs").readdirSync(normalizedPath).forEach(function(file) {
+  require("./server/"+file)(router);
 });
+
 
 module.exports = router;
