@@ -88,5 +88,17 @@ module.exports = {
     } catch (e) {
       console.log(e);
     }
+  },
+
+  drop : (table)=>{
+try{
+  var file = __dirname + "/base/"+table+".json"
+fs.unlinkSync(file)
+console.log("deleted")
+//return "Successfully Deleted"
+}
+catch(e){
+    console.log(e)
+}
   }
 };

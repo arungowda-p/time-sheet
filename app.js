@@ -40,4 +40,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
+/*app.get('/face/:file', function(req, res) {
+  console.log(req.params.file)
+  var js="./views/face/"+req.params.file
+res.sendFile(js);
+});
+*/
 module.exports = app;

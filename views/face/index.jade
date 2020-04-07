@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Document
+    script(type="text/javascript", src='/javascripts/face-api.min.js').
+    style.
+      body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+      canvas {
+      position: absolute;
+      }
+  body
+    //hi Welcome
+    video#video(width='720', height='560', autoplay='', muted='')
+    script(type="text/javascript", src='/javascripts/script.js').
