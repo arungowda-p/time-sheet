@@ -8,7 +8,7 @@ module.exports = {
       if (!fs.existsSync(path)) {
         fs.mkdirSync(path);
       }
-      var content = [];
+      var content = {[name]:[]};
       fs.access(path + name + ".json", (err) => {
         if (!err) {
           console.log("Table already exsits");
@@ -38,9 +38,11 @@ module.exports = {
         if (err) {
           console.log("Create a table to Intert");
         } else {
+          console.log("inside write",JSON.parse(data))
           var rawcontent = fs.readFileSync(path + table + ".json");
           var content = JSON.parse(rawcontent);
-          content.push(data);
+          console.log(rawcontent+"  asd     "+content)
+          content[table].push(JSON.parse(data));
           fs.writeFile(
             path + table + ".json",
             JSON.stringify(content),
